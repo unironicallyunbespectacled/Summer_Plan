@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRAISE — SUMMER PLAN 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+/* PART A — CSS VARIABLES */
+:root {
+  --black: #0a0a0a; --dark: #111111; --card: #161616; --border: #222;
+  --gold: #c9a84c; --gold-light: #f0c96a; --orange: #e8652a; --red: #c0392b;
+  --green: #27ae60; --blue: #2980b9; --purple: #8e44ad;
+  --white: #f4f1eb; --muted: #888; --accent: #c9a84c;
+}
+
+/* PART B — GLOBAL RESETS */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--black); color: var(--white); font-family: 'DM Sans', sans-serif; font-size: 15px; line-height: 1.7; overflow-x: hidden; }
+
+/* PART C — INSTANT WIN ADDITIONS */
+::selection { background: rgba(201,168,76,0.35); color: var(--white); }
+::-moz-selection { background: rgba(201,168,76,0.35); color: var(--white); }
+::-webkit-scrollbar { width: 6px; background: #111; }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-light); }
+* { scrollbar-color: var(--gold) #111; scrollbar-width: thin; }
+
+/* PART D — SCROLL PROGRESS BAR */
+#scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px;
+  z-index: 9999; background: var(--gold);
+  transform-origin: left; transform: scaleX(0);
+  transition: transform 0.1s linear; pointer-events: none;
+}
+
+/* PART E — FILM GRAIN OVERLAY */
+body::after {
+  content: ''; position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%; pointer-events: none; z-index: 9998;
+  opacity: 0.04; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* PART F — SCROLL REVEAL */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.5s ease-out, transform 0.5s ease-out; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-stagger > * { opacity: 0; transform: translateY(20px); transition: opacity 0.4s ease-out, transform 0.4s ease-out; }
+.reveal-stagger.visible > *:nth-child(1) { opacity:1; transform:none; transition-delay:0s; }
+.reveal-stagger.visible > *:nth-child(2) { opacity:1; transform:none; transition-delay:0.08s; }
+.reveal-stagger.visible > *:nth-child(3) { opacity:1; transform:none; transition-delay:0.16s; }
+.reveal-stagger.visible > *:nth-child(4) { opacity:1; transform:none; transition-delay:0.24s; }
+.reveal-stagger.visible > *:nth-child(5) { opacity:1; transform:none; transition-delay:0.32s; }
+.reveal-stagger.visible > *:nth-child(n+6) { opacity:1; transform:none; transition-delay:0.4s; }
+
+/* PART G — CUSTOM CURSOR */
+@media (pointer: fine) {
+  * { cursor: none !important; }
+  #cursor-dot { position:fixed; width:10px; height:10px; border-radius:50%; background:var(--gold); pointer-events:none; z-index:99999; transform:translate(-50%,-50%); transition:width 0.2s,height 0.2s; mix-blend-mode:difference; }
+  #cursor-ring { position:fixed; width:36px; height:36px; border-radius:50%; border:1.5px solid rgba(201,168,76,0.5); pointer-events:none; z-index:99998; transform:translate(-50%,-50%); transition:width 0.3s,height 0.3s,border-color 0.3s; }
+  #cursor-dot.hovering { width:6px; height:6px; }
+  #cursor-ring.hovering { width:56px; height:56px; border-color:var(--gold); }
+}
+@media (pointer: coarse) { * { cursor:auto !important; } }
+
+/* PART H — GLASSMORPHISM */
+.nav { transition: background 0.3s, backdrop-filter 0.3s, box-shadow 0.3s; }
+.nav.scrolled {
+  background: rgba(17,17,17,0.75) !important;
+  backdrop-filter: blur(20px) saturate(1.5);
+  -webkit-backdrop-filter: blur(20px) saturate(1.5);
+  box-shadow: 0 1px 0 var(--gold), 0 4px 24px rgba(0,0,0,0.6);
+}
+.glass-card {
+  background: rgba(22,22,22,0.65) !important;
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  border: 1px solid rgba(201,168,76,0.2);
+}
+@supports not (backdrop-filter: blur(1px)) {
+  .nav.scrolled { background: rgba(17,17,17,0.97) !important; }
+  .glass-card { background: rgba(22,22,22,0.98) !important; }
+}
+
+/* PART I — CHROMATIC TEXT */
+.chromatic-text { position: relative; display: inline-block; }
+.chromatic-text::before, .chromatic-text::after { content: attr(data-text); position: absolute; top:0; left:0; width:100%; height:100%; font-family:inherit; font-size:inherit; font-style:inherit; color:inherit; }
+.chromatic-text::before { color: rgba(255,80,80,0.4); transform: translateX(-2px); clip-path: inset(0 0 50% 0); }
+.chromatic-text::after { color: rgba(80,180,255,0.4); transform: translateX(2px); clip-path: inset(50% 0 0 0); }
+@-moz-document url-prefix() { .chromatic-text::before, .chromatic-text::after { display: none; } }
+
+/* PART J — MARQUEE TICKER */
+.ticker-wrap { background: var(--gold); overflow: hidden; padding: 10px 0; white-space: nowrap; }
+.ticker-content { display: inline-block; animation: ticker 28s linear infinite; }
+.ticker-content:hover { animation-play-state: paused; }
+.ticker-item { display: inline-block; font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 3px; color: var(--black); padding: 0 30px; }
+.ticker-item::after { content: '·'; padding-left: 30px; }
+@keyframes ticker { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+/* PART K — HERO */
+.hero { background: linear-gradient(135deg, #0a0a0a 0%, #1a0f00 50%, #0a0a0a 100%); border-bottom: 1px solid var(--gold); padding: 60px 40px 50px; text-align: center; position: relative; overflow: hidden; }
+@keyframes breathe { 0%,100% { opacity: 0.06; } 50% { opacity: 0.12; } }
+.hero::before { content:''; position:absolute; top:-50%; left:-50%; width:200%; height:200%; background:radial-gradient(circle at 50% 50%, rgba(201,168,76,0.08) 0%, transparent 60%); pointer-events:none; animation:breathe 7s ease-in-out infinite; }
+.hero::after { content:''; position:absolute; bottom:-30%; right:-20%; width:60%; height:80%; background:radial-gradient(circle, rgba(201,100,40,0.05) 0%, transparent 70%); pointer-events:none; }
+.hero-eyebrow { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:4px; color:var(--gold); text-transform:uppercase; margin-bottom:16px; }
+.hero-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(64px,12vw,140px); letter-spacing:2px; line-height:0.9; color:var(--white); margin-bottom:10px; }
+.hero-title span { color: var(--gold); }
+.hero-title .word { display:inline-block; opacity:0; transform:translateY(60px); transition:opacity 0.5s ease-out,transform 0.5s ease-out; }
+.hero-title .word.in { opacity:1; transform:translateY(0); }
+.hero-subtitle { font-family:'Playfair Display',serif; font-style:italic; font-size:18px; color:var(--muted); margin-bottom:30px; }
+.hero-stats { display:flex; justify-content:center; gap:40px; flex-wrap:wrap; margin-top:30px; }
+.stat-item { text-align:center; }
+.stat-num { font-family:'Bebas Neue',sans-serif; font-size:48px; color:var(--gold); line-height:1; }
+.stat-label { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:3px; color:var(--muted); text-transform:uppercase; margin-top:4px; }
+
+/* PART L — NAV */
+.nav { background:var(--dark); border-bottom:1px solid var(--border); padding:0 40px; display:flex; gap:0; overflow-x:auto; position:sticky; top:0; z-index:100; }
+.nav a { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:2px; text-transform:uppercase; color:var(--muted); text-decoration:none; padding:14px 16px; border-bottom:2px solid transparent; white-space:nowrap; transition:all 0.2s; }
+.nav a:hover, .nav a.active { color:var(--gold); border-bottom-color:var(--gold); }
+
+/* PART M — LAYOUT SYSTEM */
+.container { max-width:1100px; margin:0 auto; padding:0 24px; }
+section { padding:60px 40px; border-bottom:1px solid var(--border); }
+.section-label { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:4px; text-transform:uppercase; color:var(--gold); margin-bottom:8px; }
+.section-title { font-family:'Bebas Neue',sans-serif; font-size:clamp(40px,6vw,72px); line-height:1; margin-bottom:30px; color:var(--white); }
+
+/* PART N — GRIDS */
+.grid-2 { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:20px; }
+.grid-3 { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+.grid-4 { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; }
+.bento-grid { display:grid; grid-template-columns:repeat(4,1fr); grid-auto-rows:100px; gap:12px; }
+.bento-grid .bento-item { border:1px solid var(--border); border-radius:8px; padding:16px; display:flex; flex-direction:column; justify-content:space-between; transition:transform 0.2s,border-color 0.2s,box-shadow 0.2s; }
+.bento-grid .bento-item:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.5); }
+.bento-item.span-2-col { grid-column:span 2; }
+.bento-item.span-full { grid-column:span 4; }
+.bento-item.span-2-row { grid-row:span 2; }
+
+/* PART O — CARDS */
+.card { background:var(--card); border:1px solid var(--border); border-radius:4px; padding:24px; position:relative; overflow:hidden; transition:border-color 0.2s,transform 0.2s,box-shadow 0.2s; }
+.card::before { content:''; position:absolute; top:0; left:0; right:0; bottom:0; background:radial-gradient(circle at var(--mx,50%) var(--my,50%), rgba(201,168,76,0.10), transparent 60%); opacity:0; transition:opacity 0.3s; pointer-events:none; border-radius:inherit; }
+.card:hover::before { opacity:1; }
+.card:hover { border-color:rgba(201,168,76,0.3); transform:translateY(-2px); box-shadow:0 8px 32px rgba(0,0,0,0.4); }
+.card-title { font-family:'DM Mono',monospace; font-size:11px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin-bottom:12px; }
+.card h3 { font-family:'Playfair Display',serif; font-size:20px; margin-bottom:10px; color:var(--white); }
+.card p { color:var(--muted); font-size:13.5px; line-height:1.6; }
+.highlight-card { background:linear-gradient(135deg,#1a1200,#1a0a00); border:1px solid var(--gold); }
+
+/* PART P — COLLAPSIBLE PHASE BLOCKS */
+.phase-block { border-left:3px solid var(--gold); background:var(--card); margin-bottom:16px; border-radius:0 4px 4px 0; }
+.phase-header { display:flex; align-items:baseline; gap:16px; padding:24px 28px; flex-wrap:wrap; cursor:pointer; user-select:none; position:relative; }
+.phase-header::after { content:'▼'; position:absolute; right:24px; top:50%; transform:translateY(-50%); color:var(--gold); font-size:12px; transition:transform 0.3s; }
+.phase-block.collapsed .phase-header::after { transform:translateY(-50%) rotate(-90deg); }
+.phase-body { padding:0 28px 24px; overflow:hidden; max-height:2000px; transition:max-height 0.5s ease-in-out,padding 0.3s; }
+.phase-block.collapsed .phase-body { max-height:0; padding-bottom:0; }
+.phase-num { font-family:'Bebas Neue',sans-serif; font-size:48px; color:var(--gold); line-height:1; }
+.phase-name { font-family:'Bebas Neue',sans-serif; font-size:28px; color:var(--white); }
+.phase-date { font-family:'DM Mono',monospace; font-size:11px; color:var(--muted); margin-left:auto; margin-right:32px; }
+.phase-block ul { list-style:none; }
+.phase-block ul li { padding:5px 0 5px 16px; position:relative; font-size:14px; color:var(--muted); border-bottom:1px solid var(--border); }
+.phase-block ul li:last-child { border-bottom:none; }
+.phase-block ul li::before { content:'→'; position:absolute; left:0; color:var(--gold); }
+
+/* PART Q — ALL REMAINING CSS */
+.schedule-row { display:flex; gap:24px; padding:16px 0; border-bottom:1px solid var(--border); align-items:flex-start; }
+.schedule-time { font-family:'DM Mono',monospace; font-size:11px; color:var(--gold); width:80px; flex-shrink:0; }
+.schedule-content { flex-grow:1; }
+.schedule-title { font-weight:500; color:var(--white); margin-bottom:4px; }
+.schedule-desc { font-size:13px; color:var(--muted); line-height:1.5; }
+.schedule-tag { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; padding:2px 6px; border-radius:2px; margin-top:8px; display:inline-block; }
+.tag-body { background:rgba(192,57,43,0.15); color:#e74c3c; border:1px solid rgba(192,57,43,0.3); }
+.tag-mind { background:rgba(41,128,185,0.15); color:#3498db; border:1px solid rgba(41,128,185,0.3); }
+.tag-lang { background:rgba(39,174,96,0.15); color:#2ecc71; border:1px solid rgba(39,174,96,0.3); }
+.tag-art { background:rgba(142,68,173,0.15); color:#9b59b6; border:1px solid rgba(142,68,173,0.3); }
+.tag-project { background:rgba(232,101,42,0.15); color:#e67e22; border:1px solid rgba(232,101,42,0.3); }
+.tag-sleep { background:rgba(136,136,136,0.15); color:var(--muted); border:1px solid rgba(136,136,136,0.3); }
+
+.location-card { border-radius:4px; overflow:hidden; }
+.location-name { font-family:'Bebas Neue',sans-serif; font-size:24px; color:var(--white); margin-bottom:4px; }
+.location-address { font-family:'DM Mono',monospace; font-size:10px; color:var(--gold); margin-bottom:12px; text-transform:uppercase; }
+.location-rating { color:var(--gold); font-size:12px; margin-bottom:12px; }
+.location-note { font-size:13px; color:var(--muted); font-style:italic; border-left:2px solid var(--border); padding-left:12px; }
+
+table { width:100%; border-collapse:collapse; margin:20px 0; background:var(--card); border-radius:4px; overflow:hidden; }
+th { background:var(--dark); color:var(--gold); font-family:'DM Mono',monospace; font-size:10px; letter-spacing:2px; text-transform:uppercase; text-align:left; padding:16px; position:sticky; top:0; z-index:10; border-bottom:1px solid var(--border); }
+td { padding:16px; border-bottom:1px solid var(--border); color:var(--muted); font-size:13.5px; }
+tr:hover td { background:rgba(255,255,255,0.02); color:var(--white); }
+
+.timeline { display:flex; gap:0; margin-top:40px; border:1px solid var(--border); border-radius:4px; overflow:hidden; }
+.timeline-phase { flex:1; padding:24px; border-right:1px solid var(--border); position:relative; }
+.timeline-phase:last-child { border-right:none; }
+.tp-num { font-family:'Bebas Neue',sans-serif; font-size:32px; color:var(--gold); line-height:1; margin-bottom:8px; }
+.tp-name { font-family:'DM Mono',monospace; font-size:10px; letter-spacing:2px; color:var(--white); text-transform:uppercase; }
+.tp-date { font-size:11px; color:var(--muted); margin-top:4px; }
+
+.lang-row { display:flex; align-items:center; gap:20px; padding:16px 0; border-bottom:1px solid var(--border); }
+.lang-flag { font-size:24px; flex-shrink:0; }
+.lang-name { font-family:'Bebas Neue',sans-serif; font-size:24px; color:var(--white); width:140px; flex-shrink:0; }
+.lang-method { font-size:13px; color:var(--muted); flex-grow:1; }
+.lang-bar-wrap { width:200px; height:6px; background:var(--border); border-radius:3px; overflow:hidden; flex-shrink:0; }
+.lang-bar { height:100%; background:var(--gold); transition: width 1.5s ease-out; width: 0; }
+.lang-bar.animate { width: var(--target-width, 50%); }
+.lang-target { font-family:'DM Mono',monospace; font-size:10px; color:var(--gold); width:40px; text-align:right; flex-shrink:0; }
+
+.macro-bar { display:flex; height:8px; border-radius:4px; overflow:hidden; background:var(--border); margin:12px 0; }
+.macro-seg { height:100%; }
+
+.goal-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(14px, 1fr)); gap:4px; margin-top:12px; }
+.goal-item { position:relative; }
+.goal-dot { width:8px; height:8px; border-radius:50%; background:var(--border); }
+.goal-dot.active { background:var(--gold); box-shadow:0 0 8px var(--gold); }
+
+.gold-line { height:1px; background:linear-gradient(90deg, transparent, var(--gold), transparent); margin:40px 0; position:relative; }
+
+.badge { font-family:'DM Mono',monospace; font-size:9px; letter-spacing:1px; text-transform:uppercase; padding:2px 8px; border-radius:10px; display:inline-block; }
+.badge-gold { background:rgba(201,168,76,0.15); color:var(--gold); border:1px solid var(--gold); }
+.badge-red { background:rgba(192,57,43,0.15); color:#e74c3c; border:1px solid #c0392b; }
+.badge-green { background:rgba(39,174,96,0.15); color:#2ecc71; border:1px solid #27ae60; }
+.badge-blue { background:rgba(41,128,185,0.15); color:#3498db; border:1px solid #2980b9; }
+
+.tip-list { list-style:none; }
+.tip-list li { padding-left:24px; position:relative; margin-bottom:12px; color:var(--muted); font-size:14px; }
+.tip-list li::before { content:'▸'; position:absolute; left:0; color:var(--gold); }
+
+.rule-block { margin-bottom:32px; }
+.rule-num { font-family:'Bebas Neue',sans-serif; font-size:64px; color:rgba(201,168,76,0.2); line-height:0.8; margin-bottom:8px; }
+.rule-text { font-family:'Playfair Display',serif; font-size:24px; color:var(--white); line-height:1.3; }
+.rule-detail { color:var(--muted); font-size:14px; margin-top:12px; border-left:1px solid var(--border); padding-left:16px; }
+
+.meal-row { display:flex; gap:20px; padding:20px 0; border-bottom:1px solid var(--border); }
+.meal-time { font-family:'DM Mono',monospace; font-size:11px; color:var(--gold); width:60px; }
+.meal-content { flex-grow:1; }
+.meal-name { font-weight:500; color:var(--white); margin-bottom:4px; }
+.meal-detail { font-size:13px; color:var(--muted); }
+.meal-macros { font-family:'DM Mono',monospace; font-size:10px; color:var(--muted); margin-top:8px; }
+
+.big-quote { font-family:'Playfair Display',serif; font-style:italic; font-size:32px; text-align:center; padding:80px 40px; color:var(--white); line-height:1.4; }
+
+.intern-tracker-header { background:var(--card); border:1px solid var(--border); padding:20px; border-radius:4px; margin-bottom:20px; font-family:'DM Mono',monospace; font-size:12px; color:var(--gold); text-transform:uppercase; letter-spacing:2px; display:flex; justify-content:space-between; }
+.intern-row-applied { opacity:0.5; background:rgba(39,174,96,0.05) !important; }
+.intern-row-applied td { text-decoration:line-through; }
+.intern-check { cursor:pointer; width:18px; height:18px; accent-color:var(--gold); }
+
+#toast { position:fixed; bottom:40px; left:50%; transform:translateX(-50%) translateY(100px); background:var(--card); border:1px solid var(--gold); padding:12px 24px; border-radius:4px; color:var(--white); font-family:'DM Mono',monospace; font-size:12px; z-index:100000; opacity:0; transition:all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); pointer-events:none; }
+#toast.show { opacity:1; transform:translateX(-50%) translateY(0); }
+
+#back-top { position:fixed; bottom:40px; right:40px; width:44px; height:44px; border-radius:50%; background:var(--black); border:1.5px solid var(--gold); color:var(--gold); font-size:20px; z-index:9999; cursor:pointer; opacity:0; transition:all 0.3s; transform:translateY(20px); display:flex; align-items:center; justify-content:center; }
+#back-top.visible { opacity:1; transform:translateY(0); }
+
+.footer { padding:80px 40px; border-top:1px solid var(--border); text-align:center; background:var(--black); }
+.footer-title { font-family:'Bebas Neue',sans-serif; font-size:32px; color:var(--gold); letter-spacing:4px; margin-bottom:12px; }
+.footer p { font-family:'DM Mono',monospace; font-size:12px; color:var(--muted); letter-spacing:1px; }
+
+/* PART R — RESPONSIVE */
+@media (max-width: 600px) {
+  section { padding:40px 20px; }
+  .hero { padding:40px 20px; }
+  .hero-stats { gap:20px; }
+  .nav { padding:0 16px; }
+  .schedule-row { flex-direction:column; gap:8px; }
+  .lang-row { flex-wrap:wrap; }
+  .lang-bar-wrap { display:none; }
+  .timeline { flex-direction:column; }
+  .timeline-phase { border-right:none; border-bottom:1px solid var(--border); }
+  .bento-grid { grid-template-columns:1fr 1fr; }
+  .bento-item.span-full { grid-column:span 2; }
+  .bento-item.span-2-col { grid-column:span 2; }
+  body::after { display:none; }
+  #cursor-dot, #cursor-ring { display:none !important; }
+}
+@media (min-width:601px) and (max-width:1024px) {
+  .bento-grid { grid-template-columns:repeat(2,1fr); }
+  .bento-item.span-full { grid-column:span 2; }
+}
+</style>
+</head>
+<body>
+<div id="scroll-progress"></div>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+<button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+<div id="toast"></div>
+
+<div class="hero">
+  <div class="hero-eyebrow">Praise Chukwudaru · M29 · Buenos Aires · 2026</div>
+  <h1 class="hero-title" id="hero-title" data-easter="title-click">
+    <span class="word">THE</span> <span class="word" style="color:var(--gold)">PRAISE</span><br>
+    <span class="word">SUMMER</span><br>
+    <span class="word">PLAN</span>
+  </h1>
+  <div class="hero-subtitle chromatic-text" data-text="Eat your cake AND have it. Breadth, depth, and length — all three.">
+    Eat your cake AND have it. Breadth, depth, and length — all three.
+  </div>
+  <div class="hero-stats">
+    <div class="stat-item">
+      <div class="stat-num" data-target="110">0</div>
+      <div class="stat-label">Days</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="55" data-suffix="+">0</div>
+      <div class="stat-label">Goals</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="8">0</div>
+      <div class="stat-label">Clusters</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="4">0</div>
+      <div class="stat-label">Phases</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-target="500" data-prefix="~">0</div>
+      <div class="stat-label">Free Hours</div>
+    </div>
+  </div>
+</div>
+
+<div class="ticker-wrap" id="motto-ticker">
+  <div class="ticker-content">
+    <span class="ticker-item">MAY 4</span>
+    <span class="ticker-item">AUGUST 21, 2026</span>
+    <span class="ticker-item" data-easter="maps-link" style="cursor:pointer">LUIS VIALE 11</span>
+    <span class="ticker-item">VILLA CRESPO</span>
+    <span class="ticker-item">110 DAYS</span>
+    <span class="ticker-item">TOKYO SEPT 7</span>
+    <span class="ticker-item">WORLD CUP JUN 11</span>
+    <span class="ticker-item">4 MARTIAL ARTS</span>
+    <span class="ticker-item">10 LANGUAGES</span>
+    <span class="ticker-item">55+ GOALS</span>
+    <span class="ticker-item">START NOW</span>
+  </div>
+  <div class="ticker-content">
+    <span class="ticker-item">MAY 4</span>
+    <span class="ticker-item">AUGUST 21, 2026</span>
+    <span class="ticker-item" data-easter="maps-link" style="cursor:pointer">LUIS VIALE 11</span>
+    <span class="ticker-item">VILLA CRESPO</span>
+    <span class="ticker-item">110 DAYS</span>
+    <span class="ticker-item">TOKYO SEPT 7</span>
+    <span class="ticker-item">WORLD CUP JUN 11</span>
+    <span class="ticker-item">4 MARTIAL ARTS</span>
+    <span class="ticker-item">10 LANGUAGES</span>
+    <span class="ticker-item">55+ GOALS</span>
+    <span class="ticker-item">START NOW</span>
+  </div>
+</div>
+
+<section style="background:linear-gradient(135deg,#1a0000,#0a0a0a);border-bottom:2px solid #e74c3c;padding:40px;">
+<div class="container">
+  <div class="section-label">🚨 URGENT — THIS WEEK (Apr 30 – May 6)</div>
+  <h2 class="section-title">IMMEDIATE PRIORITIES</h2>
+  
+  <div class="grid-3">
+    <div class="card glass-card" style="border-color:#e74c3c">
+      <div class="card-title" style="color:#e74c3c">TODAY — APR 30 ✅</div>
+      <h3>REST. Do nothing.</h3>
+      <p>You just moved from Esmeralda 920. You're exhausted. You're legally covered until May 6. The system doesn't care that you're tired. Rest today. Start fresh tomorrow.</p>
+    </div>
+    
+    <div class="card glass-card" style="border-color:#27ae60">
+      <div class="card-title" style="color:#2ecc71">MAY 1 — PUBLIC HOLIDAY 🇦🇷</div>
+      <h3>Día del Trabajador — all offices closed</h3>
+      <ul class="tip-list">
+        <li>Research internship list</li>
+        <li>Spanish homework from UBA</li>
+        <li>Study for UBA exams next week</li>
+        <li>Check RaDEX portal login works</li>
+        <li>Hit an ATM before it runs out of cash (holiday weekend)</li>
+      </ul>
+    </div>
+    
+    <div class="card glass-card" style="border-color:#3498db">
+      <div class="card-title" style="color:#3498db">MAY 2–3 — WEEKEND</div>
+      <h3>Spanish exam prep + internship apps</h3>
+      <ul class="tip-list">
+        <li>UBA Spanish exam prep — block 2–3 hours each day</li>
+        <li>Start sending internship applications (rolling deadlines)</li>
+        <li>Explore the new neighbourhood once (novelty)</li>
+        <li>Light bodyweight home workout if energy allows</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div class="grid-2" style="margin-top:20px">
+    <div class="card glass-card" style="border-color:var(--gold)">
+      <div class="card-title" style="color:var(--gold)">MONDAY MAY 4 — ACTION DAY 🔑</div>
+      <h3>Immigration + Summer officially starts</h3>
+      <ul class="tip-list">
+        <li>09:00 AM: Provincia NET/Pago Fácil — pay tasa for Certificado de Domicilio (~2,500 ARS)</li>
+        <li>10:00 AM: Comisaría Vecinal 15 B, Camargo 645. Say: <i style="color:var(--gold)">"Hola, soy estudiante de Nigeria. Me mudé aquí y necesito el certificado de domicilio para Migraciones."</i></li>
+        <li>After: Check RaDEX — payment from April 27 should show "Pagado." Upload new address proof.</li>
+        <li>Stay home: Officer will visit Luis Viale 11 in 24–48 hrs. Be there.</li>
+      </ul>
+    </div>
+    
+    <div class="card glass-card" style="border-color:#16a085">
+      <div class="card-title" style="color:#16a085">MAY 5–6 — UBA EXAMS + PRECARIA DEADLINE</div>
+      <h3>Exams + stay calm on the May 6 date</h3>
+      <ul class="tip-list">
+        <li>UBA exams — you've been studying since May 1. You're ready.</li>
+        <li>May 6 precaria "expiry" — you are NOT in danger. File number 1282242025 + payment receipt = legally "En Trámite." You can stay.</li>
+        <li>Police officer should visit before May 6 if you went Monday. Stay reachable.</li>
+        <li>Once officer visits and you download new precaria, your status is fully renewed.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<nav class="nav" id="main-nav">
+  <a href="#overview">Overview</a>
+  <a href="#budget">Budget</a>
+  <a href="#internships">Internships</a>
+  <a href="#locations">Locations</a>
+  <a href="#phases">Phases</a>
+  <a href="#schedule">Schedule</a>
+  <a href="#physical">Physical</a>
+  <a href="#diet">Diet</a>
+  <a href="#calendar">Calendar</a>
+  <a href="#languages">Languages</a>
+  <a href="#academics">Academics</a>
+  <a href="#books">Books</a>
+  <a href="#arts">Arts & Music</a>
+  <a href="#dance">Dance</a>
+  <a href="#glowup">Glow Up</a>
+  <a href="#strategy">Strategy</a>
+  <a href="#projects">Projects</a>
+  <a href="#martialarts">4 Arts</a>
+  <a href="#rules">Rules</a>
+</nav>
