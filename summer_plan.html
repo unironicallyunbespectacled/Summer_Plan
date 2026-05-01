@@ -427,3 +427,462 @@ tr:hover td { background:rgba(255,255,255,0.02); color:var(--white); }
   <a href="#martialarts">4 Arts</a>
   <a href="#rules">Rules</a>
 </nav>
+
+<section id="budget" class="reveal">
+<div class="container">
+  <div class="section-label">Real Constraints, Real Plan</div>
+  <h2 class="section-title">THE BUDGET</h2>
+  
+  <div class="card highlight-card">
+    <div class="hero-stats" style="margin-top:0">
+      <div class="stat-item">
+        <div class="stat-num">150k</div>
+        <div class="stat-label">ARS / Month</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">FREE</div>
+        <div class="stat-label">Education (UBA)</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">ZERO</div>
+        <div class="stat-label">Equipment Needed</div>
+      </div>
+    </div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Budget (ARS)</th>
+        <th>%</th>
+        <th>Strategy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Martial Arts (Dojo fees)</td>
+        <td>60,000</td>
+        <td>40%</td>
+        <td>Judo Club + Karate Dojo memberships. High ROI.</td>
+      </tr>
+      <tr>
+        <td>Food & Protein</td>
+        <td>50,000</td>
+        <td>33%</td>
+        <td>UBA Dining Hall + Coto/Día bulk buying. Rice & Beans core.</td>
+      </tr>
+      <tr>
+        <td>Gym (Strength)</td>
+        <td>25,000</td>
+        <td>17%</td>
+        <td>Local "barrio" gym. No fancy chains.</td>
+      </tr>
+      <tr>
+        <td>Transport (SUBE)</td>
+        <td>10,000</td>
+        <td>7%</td>
+        <td>Colectivos & Subte. Student discount active.</td>
+      </tr>
+      <tr>
+        <td>Entertainment</td>
+        <td>5,000</td>
+        <td>3%</td>
+        <td>Free museums, parks, and Minerva socials.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="grid-2">
+    <div class="card">
+      <div class="card-title">Zero-Cost Stack</div>
+      <ul class="tip-list">
+        <li>UBA Library (Free AC, Wifi, Desk)</li>
+        <li>Parque Centenario (Free track, calisthenics)</li>
+        <li>Language Exchanges (Mundo Lingo — Free practice)</li>
+        <li>Minerva Community (Free networking & events)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Upgrade Priority</div>
+      <ul class="tip-list">
+        <li>High-Quality Boxing Gloves (Buy in Month 2)</li>
+        <li>Spanish Proficiency Exam Fee (DELE/SIELE)</li>
+        <li>Advanced Coding Courses (Scholarships first)</li>
+        <li>Better Nutrition (Add more salmon/avocado if surplus)</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="internships" class="reveal">
+<div class="container">
+  <div class="section-label">Starting Tomorrow — Rolling Applications</div>
+  <h2 class="section-title">INTERNSHIP BLITZ</h2>
+
+  <div class="intern-tracker-header">
+    <div>Status: <span id="apply-count">0</span> / <span id="apply-total">13</span> Opportunities Tracked</div>
+    <div class="badge badge-gold">Blitz Mode: Active</div>
+  </div>
+
+  <div class="grid-2">
+    <div>
+      <div class="card-title" style="margin-bottom:10px">Tech & Strategy Roles</div>
+      <table>
+        <thead>
+          <tr>
+            <th>☐</th>
+            <th>Opportunity</th>
+            <th>Type</th>
+            <th>Deadline</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>Google Summer of Code</td>
+            <td>Open Source</td>
+            <td>Passed/Next Year</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>Vercel Solutions</td>
+            <td>Frontend</td>
+            <td>Rolling</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>Mercado Libre (MELI)</td>
+            <td>Local Tech</td>
+            <td>May 15</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>Stripe Integration</td>
+            <td>API/DevRel</td>
+            <td>Rolling</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>Minerva Hubs</td>
+            <td>Internal</td>
+            <td>May 10</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div>
+      <div class="card-title" style="margin-bottom:10px">Creative & Operations</div>
+      <table>
+        <thead>
+          <tr>
+            <th>☐</th>
+            <th>Company</th>
+            <th>Where to Apply</th>
+            <th>Angle</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>Creative Agency BA</td>
+            <td>LinkedIn</td>
+            <td>Multilingual</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>Fintech Startup</td>
+            <td>AngelList</td>
+            <td>Growth/Ops</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>EdTech Global</td>
+            <td>Direct Email</td>
+            <td>Admissions</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>AI Research Lab</td>
+            <td>Twitter/X</td>
+            <td>LLM Agentic</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>Freelance Gig 1</td>
+            <td>Upwork</td>
+            <td>React/TS</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>Freelance Gig 2</td>
+            <td>Direct</td>
+            <td>Automation</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="card highlight-card" style="margin-top:20px">
+    <div class="card-title">The Application System — 3 Per Day</div>
+    <div class="grid-3">
+      <div>
+        <h4 style="color:var(--white);margin-bottom:8px">1. Research</h4>
+        <p style="font-size:12px">Find 3 roles by 10 AM. Tailor CV for keywords.</p>
+      </div>
+      <div>
+        <h4 style="color:var(--white);margin-bottom:8px">2. Execute</h4>
+        <p style="font-size:12px">Send 3 applications by 12 PM. No excuses.</p>
+      </div>
+      <div>
+        <h4 style="color:var(--white);margin-bottom:8px">3. Network</h4>
+        <p style="font-size:12px">Message 1 employee per company on LinkedIn.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="overview" class="reveal">
+<div class="container">
+  <div class="section-label">Mission Brief</div>
+  <h2 class="section-title">THE PLAN</h2>
+
+  <div class="grid-2">
+    <div class="card highlight-card">
+      <div class="card-title">Core Insight</div>
+      <h3>"Eat your cake and have it."</h3>
+      <p>This summer is about radical breadth and deep specialization. We aren't choosing between fitness and academics; we are engineering a schedule that maximizes both. 110 days to rebuild from the ground up.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">The Canvas</div>
+      <table>
+        <tr><td>Location</td><td>Buenos Aires, Villa Crespo</td></tr>
+        <tr><td>Timeframe</td><td>May 4 – August 21, 2026</td></tr>
+        <tr><td>Philosophy</td><td>Novelty Engineering</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:40px">The 8 Goal Clusters</div>
+  <div class="bento-grid reveal-stagger" id="cluster-bento">
+    <div class="bento-item span-2-col" style="border-left:4px solid #e74c3c">
+      <div class="card-title" style="color:#e74c3c">PHYSICAL</div>
+      <h3>Gym · Boxing · Martial arts · Football · Dance · Speed · Agility</h3>
+      <div class="stat-label">90–120 min/day</div>
+    </div>
+    <div class="bento-item span-2-col" style="border-left:4px solid #2ecc71">
+      <div class="card-title" style="color:#2ecc71">LANGUAGES</div>
+      <h3>Spanish · Japanese · Portuguese · French · Russian · Kazakh</h3>
+      <div class="stat-label">60–90 min/day</div>
+    </div>
+    <div class="bento-item" style="border-left:4px solid #3498db">
+      <div class="card-title" style="color:#3498db">ACADEMICS</div>
+      <p style="font-size:11px">Minerva GPA · Year 2 prep · Coding · Reading</p>
+      <div class="stat-label">90 min</div>
+    </div>
+    <div class="bento-item" style="border-left:4px solid #9b59b6">
+      <div class="card-title" style="color:#9b59b6">ARTS</div>
+      <p style="font-size:11px">Violin · Singing · Songs · Freestyle</p>
+      <div class="stat-label">45 min</div>
+    </div>
+    <div class="bento-item" style="border-left:4px solid var(--gold)">
+      <div class="card-title">GLOW UP</div>
+      <p style="font-size:11px">Skin · Hair · Style · Rizz · Social</p>
+      <div class="stat-label">20 min</div>
+    </div>
+    <div class="bento-item" style="border-left:4px solid #e67e22">
+      <div class="card-title" style="color:#e67e22">STRATEGY</div>
+      <p style="font-size:11px">Chess · Scrabble · Wit · Intuition</p>
+      <div class="stat-label">30 min</div>
+    </div>
+    <div class="bento-item span-2-col" style="border-left:4px solid #1abc9c">
+      <div class="card-title" style="color:#1abc9c">PROJECTS</div>
+      <h3>Admissions Platform · Internships · Social media · Coding</h3>
+      <div class="stat-label">60–90 min/day</div>
+    </div>
+    <div class="bento-item span-2-col" style="border-left:4px solid #e91e8c">
+      <div class="card-title" style="color:#e91e8c">TIME</div>
+      <h3>Novelty engineering · World Cup · Memory formation</h3>
+      <div class="stat-label">Philosophy</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="locations" class="reveal">
+<div class="container">
+  <div class="section-label">Your New Terrain</div>
+  <h2 class="section-title">KEY LOCATIONS</h2>
+  
+  <div class="grid-3">
+    <div class="card location-card glass-card">
+      <div class="location-name">Karate Dojo</div>
+      <div class="location-address">Av. Ángel Gallardo 450</div>
+      <div class="location-rating">★★★★★ (4.8)</div>
+      <p class="location-note">Traditional Shotokan. Focus on kata and precision. Mon/Wed nights.</p>
+    </div>
+    <div class="card location-card glass-card">
+      <div class="location-name">Judo Club</div>
+      <div class="location-address">Hidalgo 350, Villa Crespo</div>
+      <div class="location-rating">★★★★☆ (4.5)</div>
+      <p class="location-note">Old school vibe. Hard mats, hard throws. Tue/Thu sessions.</p>
+    </div>
+    <div class="card location-card glass-card">
+      <div class="location-name">Parque Centenario</div>
+      <div class="location-address">Av. Díaz Vélez</div>
+      <div class="location-rating">★★★★★ (5.0)</div>
+      <p class="location-note">The open-air gym. Running track + pull-up bars. Dawn sessions.</p>
+    </div>
+    <div class="card location-card glass-card">
+      <div class="location-name">Boxing Gym</div>
+      <div class="location-address">Luis Viale & Camargo</div>
+      <div class="location-rating">★★★★☆ (4.2)</div>
+      <p class="location-note">Heavy bags and speed work. Local favorite.</p>
+    </div>
+    <div class="card location-card glass-card">
+      <div class="location-name">UBA Library</div>
+      <div class="location-address">Puan 480</div>
+      <div class="location-rating">★★★★☆ (4.0)</div>
+      <p class="location-note">Silent, focused, free. The academic anchor.</p>
+    </div>
+    <div class="card location-card glass-card">
+      <div class="location-name">Violin Studio</div>
+      <div class="location-address">Scalabrini Ortiz 1200</div>
+      <div class="location-rating">★★★★★ (4.7)</div>
+      <p class="location-note">Acoustically perfect. Saturday practice home.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="phases" class="reveal">
+<div class="container">
+  <div class="section-label">110 Days Divided</div>
+  <h2 class="section-title">THE PHASES</h2>
+
+  <div class="timeline reveal-stagger">
+    <div class="timeline-phase">
+      <div class="tp-num">01</div>
+      <div class="tp-name">The Foundations</div>
+      <div class="tp-date">May 4 – May 31</div>
+    </div>
+    <div class="timeline-phase">
+      <div class="tp-num">02</div>
+      <div class="tp-name">The Grind</div>
+      <div class="tp-date">Jun 1 – Jun 30</div>
+    </div>
+    <div class="timeline-phase">
+      <div class="tp-num">03</div>
+      <div class="tp-name">The Optimization</div>
+      <div class="tp-date">Jul 1 – Jul 31</div>
+    </div>
+    <div class="timeline-phase">
+      <div class="tp-num">04</div>
+      <div class="tp-name">The Final Form</div>
+      <div class="tp-date">Aug 1 – Aug 21</div>
+    </div>
+  </div>
+
+  <div style="margin-top:40px">
+    <div class="phase-block">
+      <div class="phase-header">
+        <div class="phase-num">01</div>
+        <div class="phase-name">FOUNDATION: Habit Engineering</div>
+        <div class="phase-date">May 4 – May 31</div>
+      </div>
+      <div class="phase-body">
+        <div class="grid-2">
+          <ul class="tip-list">
+            <li>Establish the 6 AM wake-up routine</li>
+            <li>Master the basic Karate kata (Heian Shodan)</li>
+            <li>Spanish fluency: Reach B2 conversationally</li>
+            <li>Complete 50 internship applications</li>
+          </ul>
+          <ul class="tip-list">
+            <li>Zero equipment workout: 50 pushups/day</li>
+            <li>Begin Violin Partita No. 2 practice</li>
+            <li>Launch first version of Admissions Platform</li>
+            <li>Secure permanent BA immigration papers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-block collapsed">
+      <div class="phase-header">
+        <div class="phase-num">02</div>
+        <div class="phase-name">THE GRIND: Intensity & Scale</div>
+        <div class="phase-date">Jun 1 – Jun 30</div>
+      </div>
+      <div class="phase-body">
+        <div class="grid-2">
+          <ul class="tip-list">
+            <li>Double workout intensity (AM Run + PM Dojo)</li>
+            <li>Japanese N4 Kanji mastery (200 new)</li>
+            <li>Write first 20,000 words of the Summer Book</li>
+            <li>World Cup viewing parties: Network in BA</li>
+          </ul>
+          <ul class="tip-list">
+            <li>Master Judo throws: Ippon Seoi Nage</li>
+            <li>Singing: Vocal range expansion exercises</li>
+            <li>Coding: Implement AI features in Projects</li>
+            <li>Diet: Strict 2.5k calorie protein focus</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-block collapsed">
+      <div class="phase-header">
+        <div class="phase-num">03</div>
+        <div class="phase-name">OPTIMIZATION: Polish & Rizz</div>
+        <div class="phase-date">Jul 1 – Jul 31</div>
+      </div>
+      <div class="phase-body">
+        <div class="grid-2">
+          <ul class="tip-list">
+            <li>Finalize internship contracts</li>
+            <li>Glow up: Complete style overhaul</li>
+            <li>Spanish C1 Prep (Advanced grammar)</li>
+            <li>Violin: Record high-quality performance</li>
+          </ul>
+          <ul class="tip-list">
+            <li>Martial Arts: Sparring focus & speed</li>
+            <li>Project: Full beta launch & user testing</li>
+            <li>Write 40,000 words total of the book</li>
+            <li>Strategy: Master 10 complex chess openers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="phase-block collapsed">
+      <div class="phase-header">
+        <div class="phase-num">04</div>
+        <div class="phase-name">FINAL FORM: Tokyo Prep</div>
+        <div class="phase-date">Aug 1 – Aug 21</div>
+      </div>
+      <div class="phase-body">
+        <div class="grid-2">
+          <ul class="tip-list">
+            <li>Maintenance phase: Consolidate gains</li>
+            <li>Pack for Tokyo: Minimalist aesthetic</li>
+            <li>Final BA tour: Visit all 12 favorite barrios</li>
+            <li>Book launch: Final edit & formatting</li>
+          </ul>
+          <ul class="tip-list">
+            <li>Conditioning: Peak physical stamina</li>
+            <li>Languages: Multilingual review (all 10)</li>
+            <li>Reflection: Goal audit & legacy doc</li>
+            <li>Departure: Buenos Aires → Tokyo Sep 7</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
