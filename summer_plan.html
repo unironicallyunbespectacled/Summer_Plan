@@ -522,7 +522,7 @@ tr:hover td { background:rgba(255,255,255,0.02); color:var(--white); }
   <h2 class="section-title">INTERNSHIP BLITZ</h2>
 
   <div class="intern-tracker-header">
-    <div>Status: <span id="apply-count">0</span> / <span id="apply-total">13</span> Opportunities Tracked</div>
+    <div>Applied: <span id="apply-count">0</span> / <span id="apply-total">13</span> Opportunities Tracked</div>
     <div class="badge badge-gold">Blitz Mode: Active</div>
   </div>
 
@@ -568,6 +568,12 @@ tr:hover td { background:rgba(255,255,255,0.02); color:var(--white); }
             <td>Minerva Hubs</td>
             <td>Internal</td>
             <td>May 10</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>OpenAI Residency</td>
+            <td>Research</td>
+            <td>Winter Prep</td>
           </tr>
         </tbody>
       </table>
@@ -616,9 +622,15 @@ tr:hover td { background:rgba(255,255,255,0.02); color:var(--white); }
           </tr>
           <tr>
             <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
-            <td>Freelance Gig 2</td>
-            <td>Direct</td>
-            <td>Automation</td>
+            <td>Cloud Infrastructure</td>
+            <td>LinkedIn</td>
+            <td>DevOps</td>
+          </tr>
+          <tr>
+            <td><input type="checkbox" class="intern-check" onchange="trackIntern(this)"></td>
+            <td>Buenos Aires Web3</td>
+            <td>Discord</td>
+            <td>Solidity/JS</td>
           </tr>
         </tbody>
       </table>
@@ -1041,18 +1053,34 @@ tr:hover td { background:rgba(255,255,255,0.02); color:var(--white); }
   <h2 class="section-title">THE WORKOUT PLAN</h2>
 
   <div class="card highlight-card">
+    <div class="card-title">Three Science Principles</div>
     <div class="grid-3">
       <div>
         <h4>1. Progressive Overload</h4>
-        <p style="font-size:12px">More reps, less rest, better form. Every week.</p>
+        <p style="font-size:12px">More reps, less rest, better form. Every week without fail.</p>
       </div>
       <div>
         <h4>2. Specificity</h4>
-        <p style="font-size:12px">Train for the martial arts you are doing.</p>
+        <p style="font-size:12px">Train for the martial arts you are doing. Explosiveness > Bulk.</p>
       </div>
       <div>
         <h4>3. Recovery</h4>
-        <p style="font-size:12px">Sleep 8 hrs. Active recovery on Sundays.</p>
+        <p style="font-size:12px">Sleep 8 hrs. Magnesium. Active recovery on Sundays (Walks).</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid-2" style="margin-top:20px">
+    <div class="card">
+      <div class="card-title">Honest Expectations</div>
+      <p style="font-size:13px">You will not look like a bodybuilder. You will look like a fighter. Lean, fast, and functional. Expect to lose 2-4kg of fat and gain significant core strength.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Daily Non-Negotiables</div>
+      <div class="grid-3">
+        <div style="text-align:center"><div class="stat-num" style="font-size:24px">50</div><div class="stat-label">Pushups</div></div>
+        <div style="text-align:center"><div class="stat-num" style="font-size:24px">100</div><div class="stat-label">Squats</div></div>
+        <div style="text-align:center"><div class="stat-num" style="font-size:24px">2m</div><div class="stat-label">Plank</div></div>
       </div>
     </div>
   </div>
@@ -1067,26 +1095,48 @@ tr:hover td { background:rgba(255,255,255,0.02); color:var(--white); }
       <div class="phase-body">
         <div class="grid-2">
           <table>
-            <tr><td>Pushups</td><td>3 sets to failure</td></tr>
-            <tr><td>Pullups</td><td>Find a tree. 5 sets.</td></tr>
-            <tr><td>Sprints</td><td>100m x 6 (3 min rest)</td></tr>
+            <thead><tr><th>Day</th><th>AM Routine</th></tr></thead>
+            <tbody>
+              <tr><td>Mon/Wed/Fri</td><td>3km Run + Katas</td></tr>
+              <tr><td>Tue/Thu/Sat</td><td>Sprints + Shadow Boxing</td></tr>
+            </tbody>
           </table>
-          <ul class="tip-list">
-            <li>Focus on perfect form.</li>
-            <li>Establish the AM running habit.</li>
-            <li>No injuries. Listen to your body.</li>
-          </ul>
+          <table>
+            <thead><tr><th>Exercise</th><th>Target</th></tr></thead>
+            <tbody>
+              <tr><td>Pushups</td><td>3 x 15</td></tr>
+              <tr><td>Squats</td><td>3 x 25</td></tr>
+              <tr><td>Pullups</td><td>3 x Max</td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-    <!-- Other phases collapsed -->
     <div class="phase-block collapsed">
       <div class="phase-header">
         <div class="phase-num">P2</div>
         <div class="phase-name">INTENSITY: The Power</div>
         <div class="phase-date">Weeks 5–8</div>
       </div>
-      <div class="phase-body"><p>Add plyometrics and explosive movements. 100m x 10 sprints.</p></div>
+      <div class="phase-body">
+        <div class="grid-2">
+          <table>
+            <thead><tr><th>Day</th><th>AM Routine</th></tr></thead>
+            <tbody>
+              <tr><td>Mon/Wed/Fri</td><td>5km Run + Heavy Bag</td></tr>
+              <tr><td>Tue/Thu/Sat</td><td>Hill Sprints + Plyos</td></tr>
+            </tbody>
+          </table>
+          <table>
+            <thead><tr><th>Exercise</th><th>Target</th></tr></thead>
+            <tbody>
+              <tr><td>Diamond Pushups</td><td>4 x 12</td></tr>
+              <tr><td>Jump Squats</td><td>4 x 20</td></tr>
+              <tr><td>Burpees</td><td>4 x 15</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
     <div class="phase-block collapsed">
       <div class="phase-header">
@@ -1094,7 +1144,9 @@ tr:hover td { background:rgba(255,255,255,0.02); color:var(--white); }
         <div class="phase-name">CONDITIONING: The Tank</div>
         <div class="phase-date">Weeks 9–12</div>
       </div>
-      <div class="phase-body"><p>Focus on endurance and high-repetition bodyweight circuits.</p></div>
+      <div class="phase-body">
+        <p>Focus on endurance and high-repetition bodyweight circuits. 100m x 12 sprints.</p>
+      </div>
     </div>
     <div class="phase-block collapsed">
       <div class="phase-header">
@@ -1102,8 +1154,21 @@ tr:hover td { background:rgba(255,255,255,0.02); color:var(--white); }
         <div class="phase-name">PEAKING: The Weapon</div>
         <div class="phase-date">Weeks 13–16</div>
       </div>
-      <div class="phase-body"><p>Maintenance and sharpening. Maximum speed and reflex drills.</p></div>
+      <div class="phase-body">
+        <p>Maintenance and sharpening. Maximum speed and reflex drills for Tokyo arrival.</p>
+      </div>
     </div>
+  </div>
+
+  <div class="card" style="margin-top:20px">
+    <div class="card-title">Home-First Weekly Split</div>
+    <table>
+      <thead><tr><th>Focus</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr></thead>
+      <tbody>
+        <tr><td>Strength</td><td>Push</td><td>Pull</td><td>Legs</td><td>Push</td><td>Pull</td><td>Legs</td></tr>
+        <tr><td>Skill</td><td>Karate</td><td>Judo</td><td>Karate</td><td>Judo</td><td>Dance</td><td>Football</td></tr>
+      </tbody>
+    </table>
   </div>
 </div>
 </section>
@@ -1271,15 +1336,622 @@ tr:hover td { background:rgba(255,255,255,0.02); color:var(--white); }
       <div class="lang-bar-wrap"><div class="lang-bar" style="--target-width:25%"></div></div>
       <div class="lang-target">25%</div>
     </div>
-    <div class="lang-row">
-      <div class="lang-flag">🇰🇿</div>
-      <div class="lang-name">KAZAKH <span class="badge badge-gold">A1</span></div>
-      <div class="lang-method">The Wildcard. Basic greetings & cultural curiosity.</div>
-      <div class="lang-bar-wrap"><div class="lang-bar" style="--target-width:4%"></div></div>
-      <div class="lang-target">4%</div>
+</section>
+
+<section id="academics" class="reveal">
+<div class="container">
+  <div class="section-label">Year 2 Prep — From the Actual Minerva Course Catalog</div>
+  <h2 class="section-title">PREP FOR YEAR 2</h2>
+  <div class="card highlight-card">
+    <div class="card-title">Minerva Excellence</div>
+    <h3>Maintain 3.5+ GPA</h3>
+    <p>Year 2 is about specialization. We start prepping the foundation for Computer Science and Business clusters now. Radical focus on first principles.</p>
+  </div>
+  <div class="grid-2 reveal-stagger" style="margin-top:20px">
+    <div class="card">
+      <div class="card-title">CS Cluster Focus</div>
+      <ul class="tip-list">
+        <li>Algorithms & Data Structures (Advanced)</li>
+        <li>Software Engineering Principles</li>
+        <li>Database Management Systems</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Business Cluster Focus</div>
+      <ul class="tip-list">
+        <li>Strategic Marketing</li>
+        <li>Financial Accounting</li>
+        <li>Economic Analysis</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid-3 reveal-stagger" style="margin-top:20px">
+    <div class="card">
+      <div class="card-title">Resource 1</div>
+      <p>MIT OpenCourseWare for supplemental CS depth.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Resource 2</div>
+      <p>Harvard Business Review case study archives.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Resource 3</div>
+      <p>Minerva Forum pre-reading list (2026.v374).</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:20px;border-color:var(--green)">
+    <div class="card-title" style="color:var(--green)">WHEN RESULTS COME OUT</div>
+    <p>Audit Phase 1 performance. If GPA < 3.5, pivot 20% of 'Free Hours' to remedial deep dives. If > 3.8, accelerate project velocity.</p>
+  </div>
+</div>
+</section>
+
+<section id="books" class="reveal">
+<div class="container">
+  <div class="section-label">1–3 Full Books Written This Summer</div>
+  <h2 class="section-title">WRITING BOOKS</h2>
+  <div class="grid-2 reveal-stagger">
+    <div class="card">
+      <div class="card-title">Book Options</div>
+      <ul class="tip-list">
+        <li>"The Novelty Engineer" (Non-fiction)</li>
+        <li>"Summer in BA" (Personal Memoir)</li>
+        <li>"Nigeria to Minerva" (Guidebook)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Daily System</div>
+      <p>500 words per day. No editing during the draft phase. Just flow.</p>
+      <div class="badge badge-gold" style="margin-top:10px">Target: 40,000 Words</div>
     </div>
   </div>
 </div>
 </section>
+
+<section id="arts" class="reveal">
+<div class="container">
+  <div class="section-label">Violin · Singing · Classical · Songs · Freestyle</div>
+  <h2 class="section-title">ARTS & MUSIC</h2>
+  <div class="grid-3 reveal-stagger">
+    <div class="card">
+      <div class="card-title">Violin</div>
+      <p>Master Bach's Partita No. 2. Focus on the Chaconne.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Singing</div>
+      <p>Daily vocal warmups. Goal: Expand range by 3 semitones.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Songwriting</div>
+      <p>Write and record 1 original song per month.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="dance" class="reveal">
+<div class="container">
+  <div class="section-label">K-Pop Choreography + Latin Dance + Hip Mobility</div>
+  <h2 class="section-title">DANCE</h2>
+  <div class="grid-2 reveal-stagger">
+    <div class="card">
+      <div class="card-title">Like JENNIE</div>
+      <p>Master 2 K-Pop choreographies perfectly. Focus on sharpness and stage presence.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Latin Vibe</div>
+      <p>Salsa and Bachata basics. Social dancing in BA clubs.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="glowup" class="reveal">
+<div class="container">
+  <div class="section-label">Skin · Hair · Style · Rizz · Social</div>
+  <h2 class="section-title">THE GLOW UP</h2>
+  <div class="grid-2 reveal-stagger">
+    <div class="card">
+      <div class="card-title">AM Routine</div>
+      <ul class="tip-list">
+        <li>Cleanser + Vitamin C + SPF</li>
+        <li>Cold Shower (Mental toughness)</li>
+        <li>Handwriting practice (10 mins)</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-title">Style Evolution</div>
+      <p>Transition to a more sophisticated, "quiet luxury" aesthetic. Tailored fits.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="strategy" class="reveal">
+<div class="container">
+  <div class="section-label">Chess · Scrabble · Intuition</div>
+  <h2 class="section-title">STRATEGY & GAMES</h2>
+  <div class="grid-2 reveal-stagger">
+    <div class="card">
+      <div class="card-title">Chess Mastery</div>
+      <p>Reach 1500 ELO on Chess.com. Master the London System and Sicilian Defense.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Scrabble</div>
+      <p>Expand high-scoring vocab. Weekly games with friends.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="projects" class="reveal">
+<div class="container">
+  <div class="section-label">Admissions Platform · Internships · Social Media</div>
+  <h2 class="section-title">PROJECTS & OPPORTUNITIES</h2>
+  <div class="grid-3 reveal-stagger">
+    <div class="card">
+      <div class="card-title">Admissions Platform</div>
+      <p>Full stack dev. Helping students get into top unis.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Social Media</div>
+      <p>Document the summer. High-quality reels/vlogs.</p>
+    </div>
+</section>
+
+<section id="rules" class="reveal">
+<div class="container">
+  <div class="section-label">Non-Negotiable</div>
+  <h2 class="section-title">THE THREE RULES</h2>
+  <div class="rule-block">
+    <div class="rule-num">01</div>
+    <div class="rule-text">Prioritize Sleep over everything except emergencies.</div>
+    <div class="rule-detail">Recovery is when you grow. No sleep = no progress. 11 PM hard cutoff.</div>
+  </div>
+  <div class="rule-block">
+    <div class="rule-num">02</div>
+    <div class="rule-text">The Daily Beats are sacred.</div>
+    <div class="rule-detail">AM Run, PM Dojo, 500 words. These happen regardless of mood or weather.</div>
+  </div>
+  <div class="rule-block">
+    <div class="rule-num">03</div>
+    <div class="rule-text">Buenos Aires is the teacher.</div>
+    <div class="rule-detail">Don't hide in your room. Use the city. Speak the language. Take the risk.</div>
+  </div>
+  <div class="big-quote">"Breadth, depth, and length — all three."</div>
+</div>
+</section>
+
+<section style="background:linear-gradient(135deg,#0a0a0a,#1a1000);border-bottom:1px solid var(--gold);" class="reveal">
+<div class="container">
+  <div class="section-label">From the Mind of the Plan</div>
+  <h2 class="section-title">MY REMARKS</h2>
+  <div class="grid-2 reveal-stagger">
+    <div class="card">
+      <div class="card-title">Scale of Ambition</div>
+      <p>This plan is aggressively designed. It targets 95% utilization of available hours. It is not for the faint of heart.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Budget</div>
+      <p>Efficiency over excess. Every ARS spent must contribute to the mission of growth.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Social</div>
+      <p>Network through action. The dojo and the university are your primary social hubs.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">Book Writing</div>
+      <p>This is the legacy piece. 110 days to document the transformation.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section id="holistic" style="background:#0d0d0d;" class="reveal">
+<div class="container">
+  <div class="section-label">Every Dimension · Nothing Skipped</div>
+  <h2 class="section-title">ALL CONSIDERABLES</h2>
+  
+  <div class="grid-3 reveal-stagger">
+    <div class="card">
+      <div class="card-title">1. Sleep Architecture</div>
+      <p>Magnesium Glycinate (200mg) + Dark room + 20 degree temp target. No screens 30 mins before 11 PM cutoff.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">2. BA Winter</div>
+      <p>Layers are key. Uniqlo Heattech core. May is cold, June is colder. Invest in a high-quality windbreaker for AM runs.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">3. Mental Health & Identity</div>
+      <p>Journaling every Sunday. Audit the vibe. Nigerian identity in a global context. Maintain "Praise" core values.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">4. Emergency Planning</div>
+      <p>Keep 50 USD cash hidden. Map of local hospitals. Emergency contact: Minerva Residence Life + Family in Lagos.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">5. Technology & Environment</div>
+      <p>Digital minimalism. Delete distraction apps. Noise-cancelling headphones for UBA library sessions.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">6. Social Architecture</div>
+      <p>Network through action. The dojo and university are primary hubs. Attend 2 high-value networking events/month.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">7. Family & Home</div>
+      <p>Weekly video call home (Sunday afternoons). Share progress. Stay grounded in Nigerian roots.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">8. Career & Professional</div>
+      <p>LinkedIn presence: Post 1 update/week about #hotboysummer progress. Optimize CV for Tokyo market.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">9. Time & Energy Management</div>
+      <p>Protect the 6-9 AM window. It is the only time nobody can ask anything of you. Use it for the hardest tasks.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">10. What Will Go Wrong</div>
+      <p>Injury prep. Flu/Sickness plan. "The Slump" protocol: If focus drops, revert to Rule #2 (The Daily Beats) only.</p>
+    </div>
+    <div class="card">
+      <div class="card-title">11. Tokyo Preparation</div>
+      <p>Visa logistics (Nigerian passport specific). Budget for Japan. Basic Japanese phrases (JLPT N5 level).</p>
+    </div>
+    <div class="card highlight-card">
+      <div class="card-title">12. Gaps & Residuals</div>
+      <p>Anything not covered elsewhere. Flexible buffer for novelty. Spontaneous BA exploration.</p>
+    </div>
+  </div>
+
+  <div class="section-label" style="margin-top:40px">The 7 Non-Negotiables</div>
+  <div class="grid-4 reveal-stagger">
+    <div class="badge badge-gold" style="padding:15px">1. 8 Hours Sleep</div>
+    <div class="badge badge-gold" style="padding:15px">2. 4L Water Daily</div>
+    <div class="badge badge-gold" style="padding:15px">3. No Zero Days</div>
+    <div class="badge badge-gold" style="padding:15px">4. 500 Words Written</div>
+    <div class="badge badge-gold" style="padding:15px">5. Move Every Day</div>
+    <div class="badge badge-gold" style="padding:15px">6. Language Practice</div>
+    <div class="badge badge-gold" style="padding:15px">7. Stay Confident</div>
+  </div>
+</div>
+</section>
+
+<section id="martialarts" style="background:#0d0d0d;" class="reveal">
+<div class="container">
+  <div class="section-label">Muay Thai · Judo · Taekwondo · Karate</div>
+  <h2 class="section-title">FOUR ARTS. ONE SUMMER.</h2>
+  <div class="card highlight-card">
+    <div class="card-title">The Honest Truth</div>
+    <p>Training 4 arts simultaneously is insane. But with a structured schedule (Karate/Judo core, Muay Thai/TKD supplemental), it is possible to build a complete foundation.</p>
+  </div>
+  
+  <div class="grid-2" style="margin-top:20px">
+    <div class="card">
+      <div class="card-title">16-Week Muay Thai Progression</div>
+      <table>
+        <thead><tr><th>Week</th><th>Focus</th></tr></thead>
+        <tbody>
+          <tr><td>W1</td><td>Stance & Footwork</td></tr>
+          <tr><td>W2</td><td>Jab/Cross Mechanics</td></tr>
+          <tr><td>W3</td><td>Roundhouse Kick Power</td></tr>
+          <tr><td>W4</td><td>Knee Strikes & Clinch</td></tr>
+          <tr><td>W5</td><td>Elbows & Short Range</td></tr>
+          <tr><td>W6</td><td>Defense: Checks & Parries</td></tr>
+          <tr><td>W7</td><td>Counter-Striking</td></tr>
+          <tr><td>W8</td><td>Clinch Dominance</td></tr>
+          <tr><td>W9</td><td>Sweep Mechanics</td></tr>
+          <tr><td>W10</td><td>Head Movement</td></tr>
+          <tr><td>W11</td><td>Combination Flow</td></tr>
+          <tr><td>W12</td><td>Heavy Bag Power</td></tr>
+          <tr><td>W13</td><td>Sparring: Control</td></tr>
+          <tr><td>W14</td><td>Sparring: Speed</td></tr>
+          <tr><td>W15</td><td>Conditioning Peak</td></tr>
+          <tr><td>W16</td><td>Final Skills Audit</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <div class="card-title">16-Week Judo Progression</div>
+      <table>
+        <thead><tr><th>Week</th><th>Focus</th></tr></thead>
+        <tbody>
+          <tr><td>W1</td><td>Ukemi (Back/Side Falls)</td></tr>
+          <tr><td>W2</td><td>Kumikata (Grip Fighting)</td></tr>
+          <tr><td>W3</td><td>O-Goshi (Major Hip Throw)</td></tr>
+          <tr><td>W4</td><td>Seoi Nage (Shoulder Throw)</td></tr>
+          <tr><td>W5</td><td>O-uchi Gari (Inner Reap)</td></tr>
+          <tr><td>W6</td><td>Ko-uchi Gari (Outer Reap)</td></tr>
+          <tr><td>W7</td><td>Newaza: Hold-downs</td></tr>
+          <tr><td>W8</td><td>Newaza: Escapes</td></tr>
+          <tr><td>W9</td><td>De Ashi Harai (Sweep)</td></tr>
+          <tr><td>W10</td><td>Uchi Mata Intro</td></tr>
+          <tr><td>W11</td><td>Combination Attacks</td></tr>
+          <tr><td>W12</td><td>Counter-Throws</td></tr>
+          <tr><td>W13</td><td>Randori: Defensive</td></tr>
+          <tr><td>W14</td><td>Randori: Offensive</td></tr>
+          <tr><td>W15</td><td>Competition Drills</td></tr>
+          <tr><td>W16</td><td>The Final Throw</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+
+<div class="footer">
+  <div class="footer-title">PRAISE CHUKWUDARU · M29</div>
+  <p>Luis Viale 11, Villa Crespo · Buenos Aires · Summer 2026</p>
+  <p style="margin-top:8px;">May 4 → August 21 · 110 Days · Tokyo Sep 7</p>
+  <p id="footer-easter" data-clicks="0" style="margin-top:16px;font-size:11px;color:#555;cursor:pointer;">
+    Breadth AND depth. Present AND future. Fun AND ambition. This is not a contradiction — it is the only way to live a life worth having.
+  </p>
+</div>
+
+<script>
+// 1. SCROLL LOGIC
+window.addEventListener('scroll', () => {
+  const ratio = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight);
+  const scrollProgress = document.getElementById('scroll-progress');
+  if (scrollProgress) scrollProgress.style.transform = `scaleX(${ratio})`;
+  const backTop = document.getElementById('back-top');
+  if (backTop) backTop.classList.toggle('visible', window.scrollY > 600);
+  const mainNav = document.getElementById('main-nav');
+  if (mainNav) mainNav.classList.toggle('scrolled', window.scrollY > 50);
+  if (Math.abs(ratio - 0.5) < 0.005) showToast('HALFWAY THERE · 55 MORE DAYS 💪');
+}, { passive: true });
+
+// 2. INTERSECTIONOBSERVER
+const revealObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); revealObs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal, .reveal-stagger').forEach(el => revealObs.observe(el));
+
+const langObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.querySelectorAll('.lang-bar').forEach(b => b.classList.add('animate')); langObs.unobserve(e.target); } });
+}, { threshold: 0.3 });
+document.querySelectorAll('.lang-row').forEach(el => langObs.observe(el));
+
+const navObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      document.querySelectorAll('.nav a').forEach(l => l.classList.remove('active'));
+      const link = document.querySelector(`.nav a[href="#${e.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-30% 0px -65% 0px' });
+document.querySelectorAll('section[id]').forEach(s => navObs.observe(s));
+
+// 3. CUSTOM CURSOR
+if (window.matchMedia('(pointer: fine)').matches) {
+  const dot = document.getElementById('cursor-dot');
+  const ring = document.getElementById('cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+  document.querySelectorAll('a, button, .card, .phase-header, .bento-item').forEach(el => {
+    el.addEventListener('mouseenter', () => { if(dot) dot.classList.add('hovering'); if(ring) ring.classList.add('hovering'); });
+    el.addEventListener('mouseleave', () => { if(dot) dot.classList.remove('hovering'); if(ring) ring.classList.remove('hovering'); });
+  });
+  (function animCursor() {
+    rx += (mx - rx) * 0.12; ry += (my - ry) * 0.12;
+    if (dot) { dot.style.left = mx + 'px'; dot.style.top = my + 'px'; }
+    if (ring) { ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; }
+    requestAnimationFrame(animCursor);
+  })();
+}
+
+// 4. CARD CURSOR GLOW
+document.querySelectorAll('.card').forEach(card => {
+  card.addEventListener('mousemove', e => {
+    const r = card.getBoundingClientRect();
+    card.style.setProperty('--mx', ((e.clientX - r.left) / r.width * 100) + '%');
+    card.style.setProperty('--my', ((e.clientY - r.top) / r.height * 100) + '%');
+  });
+});
+
+// 5. HERO STAGGER + STAT COUNTER
+window.addEventListener('load', () => {
+  const words = document.querySelectorAll('.hero-title .word');
+  words.forEach((w, i) => setTimeout(() => w.classList.add('in'), 100 + i * 120));
+  setTimeout(() => {
+    document.querySelectorAll('.stat-num[data-target]').forEach(el => {
+      const target = parseInt(el.dataset.target);
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const start = performance.now();
+      (function update(now) {
+        const t = Math.min((now - start) / 1200, 1);
+        const ease = 1 - Math.pow(1 - t, 3);
+        el.textContent = prefix + Math.floor(ease * target) + suffix;
+        if (t < 1) requestAnimationFrame(update);
+        else el.textContent = prefix + target + suffix;
+      })(start);
+    });
+  }, 100 + 4 * 120 + 200);
+});
+
+// 6. COLLAPSIBLE PHASES
+document.querySelectorAll('.phase-header').forEach(h => {
+  h.addEventListener('click', () => h.closest('.phase-block').classList.toggle('collapsed'));
+});
+
+// 7. INTERNSHIP TRACKER
+function trackIntern(cb) {
+  cb.closest('tr').classList.toggle('intern-row-applied', cb.checked);
+  localStorage.setItem('intern-' + Array.from(document.querySelectorAll('.intern-check')).indexOf(cb), cb.checked);
+  const checked = document.querySelectorAll('.intern-check:checked').length;
+  const countEl = document.getElementById('apply-count');
+  if (countEl) countEl.textContent = checked;
+}
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.intern-check').forEach((cb, i) => {
+    if (localStorage.getItem('intern-' + i) === 'true') { cb.checked = true; cb.closest('tr').classList.add('intern-row-applied'); }
+  });
+  const countEl = document.getElementById('apply-count');
+  const totalEl = document.getElementById('apply-total');
+  if (countEl) countEl.textContent = document.querySelectorAll('.intern-check:checked').length;
+  if (totalEl) totalEl.textContent = document.querySelectorAll('.intern-check').length;
+});
+
+// 8. CALENDAR FILTER
+document.querySelectorAll('.cal-filter').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.cal-filter').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    document.querySelectorAll('#cal-body tr').forEach(row => {
+      row.style.display = (filter === 'all' || row.dataset.phase === filter) ? '' : 'none';
+    });
+  });
+});
+
+// 9. TOAST
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  if (!t) return;
+  t.textContent = msg; t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 3000);
+}
+
+// 10. EASTER EGGS
+let typed = '';
+document.addEventListener('keydown', e => {
+  typed = (typed + e.key.toUpperCase()).slice(-10);
+  if (typed.endsWith('PRAISE')) {
+    const colors = ['#c9a84c','#f0c96a','#ffffff','#e74c3c','#2ecc71'];
+    for (let i = 0; i < 60; i++) {
+      const el = document.createElement('div');
+      el.style.cssText = `position:fixed;top:-10px;left:${Math.random()*100}%;width:8px;height:8px;background:${colors[i%5]};border-radius:${Math.random()>.5?'50%':'2px'};z-index:99999;pointer-events:none;animation:eggFall ${1+Math.random()*2}s ease-in forwards ${Math.random()*.5}s`;
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 3000);
+    }
+  }
+  if (typed.toLowerCase().endsWith('judo')) showToast('🥋 OSS! You type Judo like a judoka.');
+});
+
+document.getElementById('hero-title')?.addEventListener('click', function() {
+  let clicks = parseInt(this.dataset.clicks || '0') + 1;
+  this.dataset.clicks = clicks;
+  if (clicks === 3) {
+    const original = this.innerHTML;
+    this.innerHTML = `THE <span style="color:#008751">CHUKWUDARU</span><br>SUMMER<br>PLAN`;
+    showToast('CHUKWUDARU. That\'s the name. 🇳🇬');
+    setTimeout(() => { this.innerHTML = original; this.dataset.clicks = '0'; }, 3000);
+  }
+});
+
+document.querySelector('.stat-num[data-target="110"]')?.addEventListener('click', function() {
+  const el = this; let start = performance.now();
+  (function tick(now) {
+    const t = Math.min((now - start) / 1000, 1);
+    el.textContent = Math.floor(110 * (1 - t));
+    if (t < 1) requestAnimationFrame(tick);
+    else { el.textContent = '0'; showToast('Time runs out! Start NOW. ⚡'); setTimeout(() => window.location.reload(), 2000); }
+  })(start);
+});
+
+let kSeq = [];
+const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
+document.addEventListener('keydown', e => {
+  kSeq = [...kSeq, e.key].slice(-10);
+  if (JSON.stringify(kSeq) === JSON.stringify(KONAMI)) {
+    document.body.style.cssText = 'background:#008751 !important;transition:background 0.3s';
+    showToast('🇳🇬 NAIJA NO DEY CARRY LAST!');
+    setTimeout(() => { document.body.style.cssText = ''; }, 2500);
+  }
+});
+
+document.getElementById('footer-easter')?.addEventListener('click', function() {
+  let clicks = parseInt(this.dataset.clicks || '0') + 1;
+  this.dataset.clicks = clicks;
+  if (clicks >= 5) {
+    const freddy = document.createElement('div');
+    freddy.textContent = '🐱';
+    freddy.style.cssText = 'position:fixed;bottom:100px;right:30px;font-size:48px;z-index:99999;cursor:pointer;animation:bounceIn 0.5s ease;';
+    freddy.title = 'Freddy from the Admissions Platform says hi!';
+    freddy.addEventListener('click', () => freddy.remove());
+    document.body.appendChild(freddy);
+    showToast('🐱 Freddy the cat says hi! (Click to dismiss)');
+    this.dataset.clicks = '0';
+  }
+});
+
+document.querySelectorAll('td, p, li').forEach(el => {
+  if (el.textContent.includes('Tokyo') && el.textContent.includes('Sept')) {
+    el.style.cursor = 'pointer';
+    el.addEventListener('mouseenter', () => showToast('🇯🇵 Tokyo: September 7, 2026. あなたの番です！'));
+  }
+});
+
+document.querySelectorAll('.gold-line').forEach(line => {
+  line.style.cursor = 'pointer';
+  line.addEventListener('click', e => {
+    const r = document.createElement('div');
+    r.style.cssText = `position:absolute;width:4px;height:4px;background:var(--gold);border-radius:50%;left:${e.pageX}px;top:${e.pageY}px;z-index:9999;pointer-events:none;animation:rippleOut 0.6s ease-out forwards;`;
+    document.body.appendChild(r);
+    setTimeout(() => r.remove(), 700);
+  });
+});
+
+document.querySelectorAll('[data-easter="maps-link"]').forEach(el => {
+  el.addEventListener('click', function() {
+    let clicks = parseInt(this.dataset.clicks || '0') + 1;
+    this.dataset.clicks = clicks;
+    if (clicks >= 3) { window.open('https://maps.google.com/?q=Luis+Viale+11,+Villa+Crespo,+Buenos+Aires', '_blank'); this.dataset.clicks = '0'; }
+    else showToast(`Click ${3 - clicks} more time${clicks===2?'':'s'} for Google Maps 📍`);
+  });
+});
+
+// 11. CALENDAR GENERATOR
+(function() {
+  const calBody = document.getElementById('cal-body');
+  if (!calBody) return;
+  const weeks = [
+    { num: 1, focus: "Foundation & Habits", dates: ["May 4", "5", "6", "7", "8", "9", "10"] },
+    { num: 2, focus: "Internship Blitz Start", dates: ["May 11", "12", "13", "14", "15", "16", "17"] },
+    { num: 3, focus: "Spanish Exam Prep", dates: ["May 18", "19", "20", "21", "22", "23", "24"] },
+    { num: 4, focus: "First Katas Mastery", dates: ["May 25", "26", "27", "28", "29", "30", "31"] },
+    { num: 5, focus: "Intensity Ramp Up", dates: ["Jun 1", "2", "3", "4", "5", "6", "7"] },
+    { num: 6, focus: "World Cup & Networking", dates: ["Jun 8", "9", "10", "11", "12", "13", "14"] },
+    { num: 7, focus: "Judo Progress Check", dates: ["Jun 15", "16", "17", "18", "19", "20", "21"] },
+    { num: 8, focus: "Book Draft 20k", dates: ["Jun 22", "23", "24", "25", "26", "27", "28"] },
+    { num: 9, focus: "Optimization Phase", dates: ["Jun 29", "30", "Jul 1", "2", "3", "4", "5"] },
+    { num: 10, focus: "Advanced Language Immersion", dates: ["Jul 6", "7", "8", "9", "10", "11", "12"] },
+    { num: 11, focus: "Project Beta Launch", dates: ["Jul 13", "14", "15", "16", "17", "18", "19"] },
+    { num: 12, focus: "Style & Glow Up Final", dates: ["Jul 20", "21", "22", "23", "24", "25", "26"] },
+    { num: 13, focus: "Final Form Initiation", dates: ["Jul 27", "28", "29", "30", "31", "Aug 1", "2"] },
+    { num: 14, focus: "Tokyo Logistics Prep", dates: ["Aug 3", "4", "5", "6", "7", "8", "9"] },
+    { num: 15, focus: "Legacy Documentation", dates: ["Aug 10", "11", "12", "13", "14", "15", "16"] },
+    { num: 16, focus: "Buenos Aires Farewell", dates: ["Aug 17", "18", "19", "20", "21", "22", "23"] }
+  ];
+
+  weeks.forEach(w => {
+    const tr = document.createElement('tr');
+    const phase = w.num <= 4 ? 'phase1' : w.num <= 8 ? 'phase2' : w.num <= 12 ? 'phase3' : 'phase4';
+    tr.setAttribute('data-phase', phase);
+    tr.innerHTML = `
+      <td style="font-family:'DM Mono',monospace;color:var(--gold)">W${w.num}</td>
+      ${w.dates.map(d => `<td>${d}</td>`).join('')}
+      <td style="font-style:italic">${w.focus}</td>
+    `;
+    calBody.appendChild(tr);
+  });
+})();
+
+const styleEaster = document.createElement('style');
+styleEaster.textContent = `
+  @keyframes eggFall{to{transform:translateY(105vh) rotate(720deg);opacity:0}}
+  @keyframes bounceIn{0%{transform:scale(0) rotate(-20deg)}60%{transform:scale(1.2) rotate(5deg)}100%{transform:scale(1) rotate(0)}}
+  @keyframes rippleOut{to{width:200px;height:200px;opacity:0;margin:-100px;}}
+`;
+document.head.appendChild(styleEaster);
+</script>
+</body>
+</html>
+
+
+
 
 
